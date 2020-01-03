@@ -48,18 +48,6 @@ public class ECFailedActivity extends BaseActivity {
                 ActivityUtils.startActivity(ECFailedActivity.this, intent, ActivityUtils.ANIMATE_FORWARD, true);
             }
         });
-        findViewById(R.id.add_device_tip_help).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ECFailedActivity.this, BrowserActivity.class);
-                intent.putExtra(BrowserActivity.EXTRA_LOGIN, false);
-                intent.putExtra(BrowserActivity.EXTRA_REFRESH, true);
-                intent.putExtra(BrowserActivity.EXTRA_TOOLBAR, true);
-                intent.putExtra(BrowserActivity.EXTRA_TITLE, ECFailedActivity.this.getString(R.string.ty_ez_help));
-                intent.putExtra(BrowserActivity.EXTRA_URI, CommonConfig.RESET_URL);
-                startActivity(intent);
-            }
-        });
     }
 
 }

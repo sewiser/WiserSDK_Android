@@ -86,7 +86,7 @@ public class ECBindPresenter extends BasePresenter {
         if (mConfigMode == ECActivity.EC_MODE) {
             mModel.setEC(mSSId, mPassWord, token);
             startSearch();
-        } else if(mConfigMode == ECActivity.AP_MODE){
+        } else if (mConfigMode == ECActivity.AP_MODE) {
             mModel.setAP(mSSId, mPassWord, token);
         }
     }
@@ -164,7 +164,7 @@ public class ECBindPresenter extends BasePresenter {
             case DeviceBindModel.WHAT_EC_ACTIVE_SUCCESS:  //EC激活成功
             case DeviceBindModel.WHAT_AP_ACTIVE_SUCCESS:  //AP激活成功
                 L.d(TAG, "active_success");
-                DeviceBean configDev = (DeviceBean) ((Result)msg.obj).getObj();
+                DeviceBean configDev = (DeviceBean) ((Result) msg.obj).getObj();
                 stopSearch();
                 configSuccess(configDev);
                 break;
@@ -209,8 +209,8 @@ public class ECBindPresenter extends BasePresenter {
 
     //配网成功
     private void configSuccess(DeviceBean deviceBean) {
-        if (deviceBean != null){
-            Toast.makeText(mContext,"the device id is: " + deviceBean.getDevId(), Toast.LENGTH_SHORT).show();
+        if (deviceBean != null) {
+            Toast.makeText(mContext, "the device id is: " + deviceBean.getDevId(), Toast.LENGTH_SHORT).show();
         }
         stopSearch();
         mView.showConfigSuccessTip();
@@ -230,19 +230,6 @@ public class ECBindPresenter extends BasePresenter {
      */
     public void gotoShareActivity() {
 //        ActivityUtils.gotoActivity((Activity) mContext, SharedActivity.class, ActivityUtils.ANIMATE_FORWARD, true);
-    }
-
-    /**
-     * 查看帮助
-     */
-    public void goForHelp() {
-        Intent intent = new Intent(mContext, BrowserActivity.class);
-        intent.putExtra(BrowserActivity.EXTRA_LOGIN, false);
-        intent.putExtra(BrowserActivity.EXTRA_REFRESH, true);
-        intent.putExtra(BrowserActivity.EXTRA_TOOLBAR, true);
-        intent.putExtra(BrowserActivity.EXTRA_TITLE, mContext.getString(R.string.ty_ez_help));
-        intent.putExtra(BrowserActivity.EXTRA_URI, CommonConfig.FAILURE_URL);
-        mContext.startActivity(intent);
     }
 
     @Override

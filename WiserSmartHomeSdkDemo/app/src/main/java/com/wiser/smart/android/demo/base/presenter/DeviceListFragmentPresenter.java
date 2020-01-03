@@ -87,13 +87,13 @@ public class DeviceListFragmentPresenter extends BasePresenter implements NetWor
                                 break;
                             case DialogInterface.BUTTON_NEUTRAL:
 //                                //重置说明
-                                Intent intent = new Intent(mActivity, BrowserActivity.class);
-                                intent.putExtra(BrowserActivity.EXTRA_LOGIN, false);
-                                intent.putExtra(BrowserActivity.EXTRA_REFRESH, true);
-                                intent.putExtra(BrowserActivity.EXTRA_TOOLBAR, true);
-                                intent.putExtra(BrowserActivity.EXTRA_TITLE, mActivity.getString(R.string.left_button_device_offline));
-                                intent.putExtra(BrowserActivity.EXTRA_URI, CommonConfig.RESET_URL);
-                                mActivity.startActivity(intent);
+//                                Intent intent = new Intent(mActivity, BrowserActivity.class);
+//                                intent.putExtra(BrowserActivity.EXTRA_LOGIN, false);
+//                                intent.putExtra(BrowserActivity.EXTRA_REFRESH, true);
+//                                intent.putExtra(BrowserActivity.EXTRA_TOOLBAR, true);
+//                                intent.putExtra(BrowserActivity.EXTRA_TITLE, mActivity.getString(R.string.left_button_device_offline));
+//                                intent.putExtra(BrowserActivity.EXTRA_URI, CommonConfig.RESET_URL);
+//                                mActivity.startActivity(intent);
                                 break;
                             case DialogInterface.BUTTON_NEGATIVE:
                                 break;

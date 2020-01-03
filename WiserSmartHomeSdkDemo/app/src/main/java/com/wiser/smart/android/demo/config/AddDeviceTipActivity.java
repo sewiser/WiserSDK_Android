@@ -25,7 +25,6 @@ public class AddDeviceTipActivity extends BaseActivity implements View.OnClickLi
 
     private TextView mStatusLightTip;
     private Button mStatusLightOption;
-    private Button mStatusLightHelp;
     private ImageView mStatusLightImageView;
     private AnimationDrawable mStatusLightAnimation;
 
@@ -48,8 +47,6 @@ public class AddDeviceTipActivity extends BaseActivity implements View.OnClickLi
         mStatusLightOption = (Button) findViewById(R.id.status_light_option);
         mStatusLightOption.setText(R.string.ty_add_device_ez_btn_info);
         mStatusLightOption.setOnClickListener(this);
-        mStatusLightHelp = (Button) findViewById(R.id.status_light_help);
-        mStatusLightHelp.setOnClickListener(this);
     }
 
     private void initTipImageView() {
@@ -81,10 +78,6 @@ public class AddDeviceTipActivity extends BaseActivity implements View.OnClickLi
             Intent intent = new Intent(AddDeviceTipActivity.this, ECActivity.class);
             intent.putExtra(ECActivity.CONFIG_MODE, ECActivity.EC_MODE);
             ActivityUtils.startActivity(AddDeviceTipActivity.this, intent, ActivityUtils.ANIMATE_FORWARD, true);
-
-        } else if (v.getId() == R.id.status_light_help) {
-            // 切换至帮助页面
-            ActivityUtils.gotoAddDeviceHelpActivity(this, getString(R.string.ty_ez_help));
         }
     }
 

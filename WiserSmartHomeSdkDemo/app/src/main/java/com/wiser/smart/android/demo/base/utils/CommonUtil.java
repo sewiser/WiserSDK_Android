@@ -279,23 +279,6 @@ public class CommonUtil {
     }
 
     /**
-     * 是否tuya的url
-     *
-     * @return
-     */
-    public static boolean isTuyaUrl(String url) {
-        Uri uri = Uri.parse(url);
-        if (uri != null && uri.getHost() != null) {
-            String host = uri.getHost();
-            if (host != null && (host.contains("tuya.com") || host.contains("wgine.com")
-                    || host.contains("getairtake.com") || host.contains("airtakeapp.com") || host.contains("airtake.me"))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
      * url检查
      *
      * @param url

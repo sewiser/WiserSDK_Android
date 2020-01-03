@@ -25,7 +25,6 @@ public class AddDeviceAPTipActivity extends BaseActivity implements View.OnClick
 
     private TextView mStatusLightTip;
     private Button mStatusLightOption;
-    private Button mStatusLightHelp;
     private ImageView mStatusLightImageView;
     private AnimationDrawable mStatusLightAnimation;
 
@@ -50,8 +49,6 @@ public class AddDeviceAPTipActivity extends BaseActivity implements View.OnClick
         mStatusLightOption = (Button) findViewById(R.id.status_light_option);
         mStatusLightOption.setText(R.string.ty_add_device_ap_btn_info);
         mStatusLightOption.setOnClickListener(this);
-        mStatusLightHelp = (Button) findViewById(R.id.status_light_help);
-        mStatusLightHelp.setOnClickListener(this);
         if (getIntent().getBooleanExtra(FROM_EZ_FAILURE, false)) {
             ((TextView) findViewById(R.id.status_light_tip)).setText(R.string.ty_add_device_ez_failure_ap_tip);
         }
@@ -72,9 +69,6 @@ public class AddDeviceAPTipActivity extends BaseActivity implements View.OnClick
         if (v.getId() == R.id.status_light_option) {
             // 切换至设备wifi工作页面
             gotoNextActivity();
-        } else if (v.getId() == R.id.status_light_help) {
-            // 切换至帮助页面
-            ActivityUtils.gotoAddDeviceHelpActivity(this, getString(R.string.ty_ez_help));
         }
     }
 

@@ -91,30 +91,4 @@ public class ActivityUtils {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(context, intent, ANIMATE_NONE, true);
     }
-
-    public static void gotoAddDeviceHelpActivity(Activity activity, String title) {
-        Intent intent = new Intent(activity, BrowserActivity.class);
-        intent.putExtra(BrowserActivity.EXTRA_LOGIN, false);
-        intent.putExtra(BrowserActivity.EXTRA_REFRESH, true);
-        intent.putExtra(BrowserActivity.EXTRA_TOOLBAR, true);
-        intent.putExtra(BrowserActivity.EXTRA_TITLE, title);
-
-        TypedArray a = activity.obtainStyledAttributes(new int[]{
-                R.attr.is_add_device_help_get_from_native});
-        boolean isAddDeviceHelpAsset = a.getBoolean(0, false);
-        if (isAddDeviceHelpAsset) {
-            boolean isChinese = WiserUtil.isZh(WiserSdk.getApplication());
-            if (isChinese) {
-                intent.putExtra(BrowserActivity.EXTRA_URI, "file:///android_asset/add_device_help_cn.html");
-            } else {
-                intent.putExtra(BrowserActivity.EXTRA_URI, "file:///android_asset/add_device_help_en.html");
-            }
-        } else {
-            intent.putExtra(BrowserActivity.EXTRA_URI, CommonConfig.RESET_URL);
-        }
-        a.recycle();
-
-        activity.startActivity(intent);
-    }
-
 }

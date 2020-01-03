@@ -42,7 +42,6 @@ public class ECBindActivity extends BaseActivity implements IECBindView {
     TextView mNetworkTip;
     private ECBindPresenter mECBindPresenter;
     private View mRetryContactTip;
-    private TextView mHelp;
 
     private TextView mDeviceFindTip;
     private TextView mDeviceBindSussessTip;
@@ -74,8 +73,6 @@ public class ECBindActivity extends BaseActivity implements IECBindView {
                 onClickConnect();
             } else if (v.getId() == R.id.tv_finish_button) {
                 onClickFinish();
-            } else if (v.getId() == R.id.tv_ec_find_search_help) {
-                onClickFins();
             }
         }
     };
@@ -94,8 +91,6 @@ public class ECBindActivity extends BaseActivity implements IECBindView {
         mLlFailureView = (LinearLayout) findViewById(R.id.ll_failure_view);
         mNetworkTip = (TextView) findViewById(R.id.network_tip);
         mRetryContactTip = findViewById(R.id.tv_add_device_contact_tip);
-        mHelp = (TextView) findViewById(R.id.tv_ec_find_search_help);
-        mHelp.setOnClickListener(mOnClickListener);
         int color = ViewUtils.getColor(this, R.color.navbar_font_color);
         mCircleView.setBarColor(color);
         mCircleView.setSpinBarColor(color);
@@ -128,17 +123,6 @@ public class ECBindActivity extends BaseActivity implements IECBindView {
                 startActivity(wifiSettingsIntent);
             }
         }
-    }
-
-    @OnClick(R.id.add_device_tip_help)
-    public void onClickHelp() {
-        Intent intent = new Intent(this, BrowserActivity.class);
-        intent.putExtra(BrowserActivity.EXTRA_LOGIN, false);
-        intent.putExtra(BrowserActivity.EXTRA_REFRESH, true);
-        intent.putExtra(BrowserActivity.EXTRA_TOOLBAR, true);
-        intent.putExtra(BrowserActivity.EXTRA_TITLE, getString(R.string.ty_ez_help));
-        intent.putExtra(BrowserActivity.EXTRA_URI, CommonConfig.RESET_URL);
-        startActivity(intent);
     }
 
     // 配网子页面
@@ -205,7 +189,6 @@ public class ECBindActivity extends BaseActivity implements IECBindView {
         setViewVisible(mLlFailureView);
         setViewVisible(mTvRetryButton);
         setViewVisible(mRetryContactTip);
-        mHelp.setText(R.string.ty_ap_error_description);
     }
 
     public void showConnectPage() {
@@ -224,7 +207,6 @@ public class ECBindActivity extends BaseActivity implements IECBindView {
     public void showNetWorkFailurePage() {
         showFailurePage();
         setViewGone(mRetryContactTip);
-        mHelp.setText(R.string.network_time_out);
     }
 
     @Override
@@ -265,10 +247,6 @@ public class ECBindActivity extends BaseActivity implements IECBindView {
     public void onClickFinish() {
         onBackPressed();
 
-    }
-
-    public void onClickFins() {
-        mECBindPresenter.goForHelp();
     }
 
     @Override

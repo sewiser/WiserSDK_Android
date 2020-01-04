@@ -1,5 +1,6 @@
 package com.wiser.smart.android.demo.family.item;
 
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,15 +46,16 @@ public class FamilyMemberItem extends BaseItem<MemberBean> {
 
     @Override
     public void onSetViewsData(BaseViewHolder holder, int sectionKey, int sectionViewPosition) {
+        if (null == getData()) return;
         nameTxt.setText(getData().getNickName());
         accountTxt.setText(getData().getAccount());
-
-        Picasso.with(holder.getContext())
-                .load(getData().getHeadPic())
-                .centerCrop()
-                .placeholder(R.drawable.ty_nolist_logo)
-                .into(headIv);
-
+        if (null != getData().getHeadPic() && getData().getHeadPic().length() > 0) {
+            Picasso.with(holder.getContext())
+                    .load(getData().getHeadPic())
+                    .centerCrop()
+                    .placeholder(R.drawable.ty_nolist_logo)
+                    .into(headIv);
+        }
         adminTxt.setText(getData().isAdmin()
                 ? R.string.family_info_member_admin_txt
                 : R.string.family_info_member_normal_txt);

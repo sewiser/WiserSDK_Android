@@ -152,8 +152,10 @@ public class CommonDeviceDebugActivity extends BaseActivity implements ICommonDe
             public void run() {
                 SpannableStringBuilder style = new SpannableStringBuilder(log);
                 style.setSpan(new ForegroundColorSpan(color), 0, log.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                mLogView.append(style);
-                mLogView.append("\n");
+                if (null != mLogView) {
+                    mLogView.append(style);
+                    mLogView.append("\n");
+                }
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {

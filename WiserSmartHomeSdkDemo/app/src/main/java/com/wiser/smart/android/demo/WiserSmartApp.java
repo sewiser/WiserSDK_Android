@@ -22,14 +22,6 @@ public class WiserSmartApp extends Application {
         super.onCreate();
         context = this;
         L.d(TAG, "onCreate " + getProcessName(this));
-        L.setSendLogOn(true);
-//        WiserSdk.init(this,
-//                "8wyyfuw7u8ttp3pktkux",
-//                "gpppfrr9g9m7agp44nvu33xa5r85mrd4",
-//                "android",
-//                "sdk",
-//                (String)null,
-//                new UnicomApiUrlProvider(this));
         WiserSdk.init(this);
         WiserSdk.setOnNeedLoginListener(new INeedLoginListener() {
             @Override
@@ -41,7 +33,6 @@ public class WiserSmartApp extends Application {
                 startActivity(intent);
             }
         });
-        WiserHomeSdk.setDebugMode(true);
     }
 
     public static String getProcessName(Context context) {

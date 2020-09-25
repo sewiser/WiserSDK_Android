@@ -26,7 +26,6 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         L.d("splash", "wiserTime: " + WiserUtil.formatDate(System.currentTimeMillis(), "yyyy-mm-dd hh:mm:ss"));
-
         if (isInitAppkey()) {
             gotoLogin();
         } else {

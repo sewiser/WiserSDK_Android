@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.wifi.WifiManager;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.wiser.smart.android.demo.R;
 import com.wiser.smart.android.demo.base.app.Constant;

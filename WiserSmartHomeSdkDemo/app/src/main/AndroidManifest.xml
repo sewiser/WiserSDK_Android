@@ -25,14 +25,15 @@
         android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"
         android:required="false" />
 
-    <application
+    <application xmlns:tools="http://schemas.android.com/tools"
         android:name="com.wiser.smart.android.demo.WiserSmartApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
         <meta-data
             android:name="WISER_SMART_APPKEY"
             android:value="YOUR WISER_SMART_APPKEY !" />
@@ -171,21 +172,26 @@
             android:screenOrientation="portrait"
             android:theme="@style/Splash.Theme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name="com.wiser.smart.android.demo.scene.activity.SceneActivity"
+        <activity
+            android:name="com.wiser.smart.android.demo.scene.activity.SceneActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Default_Public_Theme"/>
-        <activity android:name="com.wiser.smart.android.demo.scene.activity.ConditionTaskChooseActivity"
+            android:theme="@style/Default_Public_Theme" />
+        <activity
+            android:name="com.wiser.smart.android.demo.scene.activity.ConditionTaskChooseActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Default_Public_Theme"/>
-        <activity android:name="com.wiser.smart.android.demo.scene.activity.DeviceChooseActivity"
+            android:theme="@style/Default_Public_Theme" />
+        <activity
+            android:name="com.wiser.smart.android.demo.scene.activity.DeviceChooseActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Default_Public_Theme"/>
-        <activity android:name="com.wiser.smart.android.demo.scene.activity.OperateorListActivity"
+            android:theme="@style/Default_Public_Theme" />
+        <activity
+            android:name="com.wiser.smart.android.demo.scene.activity.OperateorListActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Default_Public_Theme"/>
-        <activity android:name="com.wiser.smart.android.demo.scene.activity.OperatorValueActivity"
+            android:theme="@style/Default_Public_Theme" />
+        <activity
+            android:name="com.wiser.smart.android.demo.scene.activity.OperatorValueActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Default_Public_Theme"/>
+            android:theme="@style/Default_Public_Theme" />
     </application>
 
 </manifest>

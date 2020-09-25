@@ -2,7 +2,7 @@ package com.wiser.smart.android.demo.base.utils;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 
 import com.wiser.smart.android.demo.R;
 

@@ -3,8 +3,8 @@ package com.wiser.smart.android.demo.base.fragment;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import com.wiser.smart.android.demo.R;

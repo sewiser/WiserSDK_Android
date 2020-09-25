@@ -1,8 +1,8 @@
 package com.wiser.smart.android.demo.family.recyclerview.adapter;
 
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.v4.util.SparseArrayCompat;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.collection.SparseArrayCompat;
 import android.util.Log;
 
 import com.wiser.smart.android.demo.family.recyclerview.item.BaseFoot;

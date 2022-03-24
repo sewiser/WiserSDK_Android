@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wiser.appsdk.sample.user">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application>
+        <activity
+            android:name="com.wiser.appsdk.sample.home.list.adapter.HomeListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wiser.appsdk.sample.home.detail.HomeDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wiser.appsdk.sample.home.newHome.NewHomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wiser.appsdk.sample.home.edit.HomeEditActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+    </application>
+
+
+</manifest>
